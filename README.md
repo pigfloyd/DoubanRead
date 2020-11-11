@@ -1,24 +1,11 @@
 # read
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
+## 客户端
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 服务器
 ```
-npm run build
+npm run dev
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
