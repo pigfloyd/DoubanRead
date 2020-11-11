@@ -11,6 +11,9 @@ let router = new Router({
         },
         {
             path: '/book-list',
+            meta: {
+                title: '豆瓣图书排行榜'
+            },
             component: () => import('./views/BookList.vue')
         },
         {
@@ -19,6 +22,14 @@ let router = new Router({
             component: () => import('./views/BookDetail.vue')
         }
     ]
+})
+
+router.beforeEach((to, from, next) => {
+    /* 路由发生变化修改页面title */
+    if (to.meta.title) {
+      document.title = to.meta.title;
+    }
+    next();
 })
 
 export default router

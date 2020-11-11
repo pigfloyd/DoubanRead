@@ -11,6 +11,7 @@ export default {
         this.$axios.get(`/api/book?id= + ${this.$route.params.id}`)
         .then(res => {
             this.book = res.data
+            document.title = this.book.title;
         })
     },
     data() {
