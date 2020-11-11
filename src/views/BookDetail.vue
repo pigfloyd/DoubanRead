@@ -10,7 +10,6 @@ export default {
     mounted() {
         this.$axios.get(`/api/book?id= + ${this.$route.params.id}`)
         .then(res => {
-            console.log(res.data)
             this.book = res.data
         })
     },
