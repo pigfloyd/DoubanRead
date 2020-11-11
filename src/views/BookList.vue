@@ -4,7 +4,8 @@
         <div class="bd">
             <BookItem v-for="(item, index) in bookArr" 
             :key="index"
-            :num="item.num"
+            :num="index + 1"
+            :imgUrl="item.imgUrl"
             :title="item.title"
             :type="item.type"
             @click.native="goTo()"/>
@@ -17,35 +18,15 @@ export default {
     components: {
         BookItem
     },
+    mounted() {
+        this.$axios.get('/api/books')
+        .then(res => {
+            this.bookArr = res.data
+        })
+    },
     data() {
         return {
-            bookArr: [
-                {
-                    num: 1,
-                    title: '偶然爱情',
-                    type: '言情'
-                },
-                {
-                    num: 2,
-                    title: 'S号档案：遗失的背影',
-                    type: '悬疑'
-                },
-                {
-                    num: 2,
-                    title: 'S号档案：遗失的背影',
-                    type: '悬疑'
-                },
-                {
-                    num: 2,
-                    title: 'S号档案：遗失的背影',
-                    type: '悬疑'
-                },
-                {
-                    num: 2,
-                    title: 'S号档案：遗失的背影',
-                    type: '悬疑'
-                },
-            ]
+            bookArr: []
         }
     },
     methods: {

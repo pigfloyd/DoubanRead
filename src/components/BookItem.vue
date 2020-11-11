@@ -3,7 +3,7 @@
         <div class="num-container">
             <span class="num">{{num}}</span>
         </div>
-        <img src="../assets/test.jpg" alt="">
+        <img :src="imgUrl" alt="">
         <div class="title-container">
             <div class="title">{{title}}</div>
             <div class="type">{{type}}</div>
@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-    props: ['num', 'img', 'title', 'type'],
+    props: ['num', 'imgUrl', 'title', 'type'],
 }
 </script>
 <style lang="scss" scoped>
@@ -23,7 +23,7 @@ export default {
         width: 600px;
         height: 120px;
         padding: 10px;
-
+        border-bottom: 1px solid  #f8f9f9;
         img {
             width: auto;
             height: 100px;

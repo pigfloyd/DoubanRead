@@ -7,7 +7,7 @@ let router = new Router({
     routes: [
         {
             path: '/',
-            redirect: '/book-detail'
+            redirect: '/book-list'
         },
         {
             path: '/book-list',
