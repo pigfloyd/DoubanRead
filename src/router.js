@@ -15,6 +15,7 @@ let router = new Router({
         },
         {
             path: '/book-detail',
+            name: 'book-detail',
             component: () => import('./views/BookDetail.vue')
         }
     ]

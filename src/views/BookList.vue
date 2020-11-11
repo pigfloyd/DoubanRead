@@ -4,11 +4,12 @@
         <div class="bd">
             <BookItem v-for="(item, index) in bookArr" 
             :key="index"
+            :id="item.id"
             :num="index + 1"
             :imgUrl="item.imgUrl"
             :title="item.title"
             :type="item.type"
-            @click.native="goTo()"/>
+            @click.native="goTo(item.id)"/>
         </div>
     </div>
 </template>
@@ -30,8 +31,13 @@ export default {
         }
     },
     methods: {
-        goTo() {
-            this.$router.push('/book-detail')
+        goTo(id) {
+            this.$router.push({
+                name: 'book-detail',
+                params: {
+                    id: id
+                }
+            })
         }
     },
 }

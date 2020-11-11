@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-    props: ['num', 'imgUrl', 'title', 'type'],
+    props: ['id', 'num', 'imgUrl', 'title', 'type'],
 }
 </script>
 <style lang="scss" scoped>
